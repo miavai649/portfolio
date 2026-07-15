@@ -1,6 +1,7 @@
 import Navbar from './components/layout/Navbar';
 import About from './components/sections/About';
 import Hero from './components/sections/Hero';
+import Skills from './components/sections/Skills';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <About />
+      <Skills />
       {/* More sections will follow */}
     </main>
   );
