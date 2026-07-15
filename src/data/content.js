@@ -2,8 +2,8 @@ import { Monitor, Target, Zap } from 'lucide-react';
 import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 
 export const navLinks = [
-  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
+  { name: 'Skills', href: '#skills' },
   { name: 'Projects', href: '#projects' },
   { name: 'Contact', href: '#contact' }
 ];
