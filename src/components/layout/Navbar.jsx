@@ -1,13 +1,15 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { FileDown, Menu, Moon, Sun, X } from 'lucide-react'; // UI Icons
+import { FileDown, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { navLinks } from '../../data/content';
+import Button from '../ui/Button';
+import Container from '../ui/Container';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -15,23 +17,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.documentElement.classList.toggle('dark');
-  };
-
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'py-4 bg-white/70 dark:bg-dark-bg/70 backdrop-blur-xl border-b border-black/5 dark:border-white/5'
-          : 'py-6 bg-transparent'
+        isScrolled ? 'py-4 bg-white/70 dark:bg-black/70 backdrop-blur-xl border-b border-black/5 dark:border-white/5' : 'py-6'
       }`}>
-      <div className='max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between'>
-        {/* Logo */}
+      <Container className='flex items-center justify-between'>
         <Logo />
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <div className='hidden md:flex items-center gap-10'>
           <ul className='flex items-center gap-8'>
             {navLinks.map((link) => (
@@ -42,40 +36,31 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-
           <div className='flex items-center gap-4 border-l border-black/10 dark:border-white/10 pl-8'>
-            <button
-              onClick={toggleTheme}
-              className='p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors'
-              aria-label='Toggle Theme'>
-              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <button className='flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-white text-sm font-semibold hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95'>
-              <FileDown size={18} />
-              Resume
-            </button>
+            <ThemeToggle />
+            <Button variant='primary' className='px-5 py-2.5 text-sm'>
+              <FileDown size={18} /> Resume
+            </Button>
           </div>
         </div>
 
         {/* Mobile Toggle */}
         <div className='flex md:hidden items-center gap-4'>
-          <button onClick={toggleTheme} className='p-2'>
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          <button onClick={() => setIsMobileMenuOpen(true)}>
+          <ThemeToggle />
+          <button onClick={() => setIsMobileMenuOpen(true)} className='p-2'>
             <Menu size={24} />
           </button>
         </div>
-      </div>
+      </Container>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className='fixed inset-0 h-screen bg-white dark:bg-dark-bg z-[60] flex flex-col p-8 md:hidden'>
+            className='fixed inset-0 h-screen bg-white dark:bg-black z-[60] flex flex-col p-8 md:hidden'>
             <div className='flex justify-end'>
               <button onClick={() => setIsMobileMenuOpen(false)}>
                 <X size={30} />
@@ -90,11 +75,9 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className='mt-auto pb-10'>
-              <button className='w-full py-4 rounded-2xl bg-primary text-white font-bold text-lg flex items-center justify-center gap-2'>
-                <FileDown size={22} /> Download Resume
-              </button>
-            </div>
+            <Button className='mt-auto w-full py-4 text-lg'>
+              <FileDown size={22} /> Download Resume
+            </Button>
           </motion.div>
         )}
       </AnimatePresence>
