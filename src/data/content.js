@@ -1,4 +1,5 @@
-import { Briefcase, GraduationCap, Heart, Languages, MapPin, Zap } from 'lucide-react';
+import { Briefcase, Heart, Languages, Layers, MapPin, Zap } from 'lucide-react';
+
 import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 
 export const navLinks = [
@@ -29,31 +30,54 @@ export const aboutContent = {
   description:
     'I am a passionate Frontend Engineer with a focus on creating high-end, interactive web applications. My journey started with a curiosity for how design and code intersect, leading me to specialize in React and modern CSS architectures.',
   stats: [
-    { label: 'Years Experience', value: '5+', icon: Briefcase },
-    { label: 'Location', value: 'New York, USA', icon: MapPin },
-    { label: 'Education', value: 'B.Sc. Comp Science', icon: GraduationCap },
-    { label: 'Languages', value: 'English, Spanish', icon: Languages }
+    {
+      label: 'Years Experience',
+      value: '5+ Years',
+      icon: Briefcase
+    },
+    {
+      label: 'Location',
+      value: 'New York, USA',
+      icon: MapPin
+    },
+    {
+      label: 'Design Engineering', // REPLACED Education
+      value: 'Pixel Perfection',
+      icon: Layers
+    },
+    {
+      label: 'Languages',
+      value: 'English, Spanish',
+      icon: Languages
+    }
   ],
   highlights: [
-    { title: 'Performance First', description: 'Optimizing for speed and efficiency in every line of code.', icon: Zap },
-    { title: 'User Centric', description: 'Designing experiences that feel natural and intuitive.', icon: Heart }
+    {
+      title: 'Performance First',
+      description: 'Optimizing for speed and efficiency in every line of code.',
+      icon: Zap
+    },
+    {
+      title: 'User Centric',
+      description: 'Designing experiences that feel natural and intuitive.',
+      icon: Heart
+    }
   ]
 };
 
 export const experienceContent = [
   {
-    company: 'Creative Pulse Agency',
-    role: 'Frontend Developer',
-    duration: '2020 - 2022',
+    company: 'Octidev',
+    role: 'Software Engineer',
+    duration: 'Dec 2024 – Oct 2025',
     description:
-      'Built high-performance marketing sites and interactive dashboards for Fortune 500 clients. Focused on pixel-perfect UI implementation.',
-    technologies: ['Next.js', 'JavaScript', 'Styled Components', 'Redux']
+      'Engineered a comprehensive admin dashboard featuring role-based access control (ACL) to manage complex application data and large-scale user metrics. Contributed to the development and stability of a Shopify Cart application and built a modern, high-conversion marketing platform for product showcasing.'
   },
   {
-    company: 'StartUp Labs',
-    role: 'Junior Web Developer',
-    duration: '2018 - 2020',
-    description: 'Maintained and scaled internal tools. Gained deep experience in component-driven development and Agile methodologies.',
-    technologies: ['React', 'CSS3', 'Firebase', 'Node.js']
+    company: 'DevsNest LLC',
+    role: 'JavaScript Developer',
+    duration: 'Apr 2023 – Nov 2023',
+    description:
+      'Architected a robust web scraping engine using Puppeteer to automate promotional data collection. Developed a customizable Shopify Review App, enabling merchants to manage customer feedback through bespoke widgets, and streamlined management workflows across multiple Shopify extension dashboards.'
   }
 ];

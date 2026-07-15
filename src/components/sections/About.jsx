@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { aboutContent } from '../../data/about';
+import { aboutContent } from '../../data/content';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 
