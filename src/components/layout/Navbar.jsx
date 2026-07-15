@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { FileDown, Menu, Moon, Sun, X } from 'lucide-react'; // UI Icons
 import { useEffect, useState } from 'react';
 import { navLinks } from '../../data/content';
+import Logo from './Logo';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,9 +29,7 @@ const Navbar = () => {
       }`}>
       <div className='max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between'>
         {/* Logo */}
-        <a href='#' className='text-2xl font-display font-bold tracking-tighter'>
-          <span className='text-primary'>&lt;</span>Noor<span className='text-primary'>/&gt;</span>
-        </a>
+        <Logo />
 
         {/* Desktop Nav */}
         <div className='hidden md:flex items-center gap-10'>
