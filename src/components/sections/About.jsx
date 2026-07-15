@@ -1,58 +1,98 @@
 import { motion } from 'framer-motion';
+import { Briefcase, Minus, User } from 'lucide-react'; // Added User icon
 import { aboutContent } from '../../data/content';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 
 const About = () => {
   return (
-    <section id='about' className='py-24 relative overflow-hidden'>
+    <section id='about' className='py-32 bg-white dark:bg-dark-bg transition-colors duration-500'>
       <Container>
-        <div className='grid lg:grid-cols-2 gap-16 items-start'>
-          {/* Left: Text & Summary */}
-          <motion.div
+        {/* --- HEADER & INTRO --- */}
+        <div className='max-w-4xl mb-24'>
+          <SectionTitle
+            subtitle='Professionalism'
+            title='Design-led engineering for modern web systems.'
+            icon={User} // Added relevant icon here
+          />
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}>
-            <SectionTitle title={aboutContent.title} subtitle={aboutContent.subtitle} />
-            <p className='text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8'>{aboutContent.description}</p>
+            className='text-xl md:text-2xl text-gray-600 dark:text-zinc-400 leading-relaxed font-medium'>
+            {aboutContent.intro}
+          </motion.p>
+        </div>
 
-            <div className='grid sm:grid-cols-2 gap-6'>
-              {aboutContent.highlights.map((item, idx) => (
-                <div key={idx} className='p-6 rounded-3xl bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5'>
-                  <item.icon className='text-primary mb-4' size={24} />
-                  <h4 className='font-bold mb-2'>{item.title}</h4>
-                  <p className='text-sm text-gray-500 dark:text-gray-400'>{item.description}</p>
-                </div>
+        {/* ... rest of the component remains exactly the same ... */}
+        <div className='flex flex-col lg:flex-row gap-16 lg:gap-24'>
+          {/* LEFT: PROFESSIONAL JOURNEY */}
+          <div className='lg:w-[65%] order-2 lg:order-1'>
+            {/* ... Journey logic ... */}
+            <div className='flex items-center gap-4 mb-12'>
+              <div className='p-2 rounded-lg bg-primary/10 text-primary'>
+                <Briefcase size={20} />
+              </div>
+              <h3 className='text-sm font-black uppercase tracking-[0.3em] text-gray-400'>Experience History</h3>
+            </div>
+
+            <div className='space-y-20'>
+              {aboutContent.journey.map((job, idx) => (
+                <motion.div key={idx} /* ... existing props ... */ className='group relative'>
+                  {/* ... existing job rendering logic ... */}
+                  <span className='absolute -left-10 top-2 text-4xl font-black text-black/[0.03] dark:text-white/[0.03] hidden md:block'>
+                    0{idx + 1}
+                  </span>
+
+                  <div className='flex flex-col md:flex-row md:items-baseline justify-between mb-6 border-b border-gray-100 dark:border-zinc-800 pb-4'>
+                    <h4 className='text-3xl md:text-4xl font-display font-bold group-hover:text-primary transition-colors'>{job.role}</h4>
+                    <span className='text-sm font-bold text-primary tracking-widest uppercase mt-2 md:mt-0'>{job.period}</span>
+                  </div>
+
+                  <div className='flex flex-col md:flex-row gap-8'>
+                    <div className='md:w-1/3'>
+                      <p className='text-lg font-bold text-gray-400 dark:text-zinc-600 uppercase tracking-tighter'>{job.company}</p>
+                    </div>
+                    <div className='md:w-2/3'>
+                      <ul className='space-y-4'>
+                        {job.points.map((point, pIdx) => (
+                          <li key={pIdx} className='flex items-start gap-3 text-gray-600 dark:text-zinc-400 text-base leading-relaxed'>
+                            <Minus size={18} className='mt-1 text-primary shrink-0' />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </motion.div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Right: Info Cards */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className='grid grid-cols-2 gap-4'>
-            {aboutContent.stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className='p-8 rounded-[2rem] bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/5 shadow-sm flex flex-col items-center text-center group hover:border-primary/30 transition-colors'>
-                <div className='w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform'>
-                  <stat.icon size={24} />
+          {/* RIGHT: SUPPORTING PILLARS */}
+          <div className='lg:w-[35%] order-1 lg:order-2'>
+            <div className='sticky top-32 space-y-8'>
+              <div className='p-8 rounded-[2rem] bg-gray-50 dark:bg-zinc-900/50 border border-black/5 dark:border-white/5'>
+                <h3 className='text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-8 border-b border-black/5 dark:border-white/5 pb-4'>
+                  Professional Pillars
+                </h3>
+                {/* ... Pillar mapping logic ... */}
+                <div className='space-y-10'>
+                  {aboutContent.pillars.map((pillar, idx) => (
+                    <motion.div key={idx} className='group flex gap-5'>
+                      <div className='mt-1 p-2 h-fit rounded-lg bg-white dark:bg-zinc-800 border border-black/5 dark:border-white/5 text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300'>
+                        <pillar.icon size={18} />
+                      </div>
+                      <div>
+                        <h4 className='text-sm font-bold mb-2 uppercase tracking-wide'>{pillar.title}</h4>
+                        <p className='text-xs text-gray-500 dark:text-zinc-500 leading-relaxed'>{pillar.value}</p>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-                <p className='text-xs font-bold uppercase tracking-widest text-gray-400 mb-1'>{stat.label}</p>
-                <p className='text-lg font-bold'>{stat.value}</p>
               </div>
-            ))}
-
-            {/* Callout box */}
-            <div className='col-span-2 p-8 rounded-[2rem] bg-primary text-white flex flex-col justify-center'>
-              <h3 className='text-2xl font-display font-bold mb-2'>Let's build something amazing together.</h3>
-              <p className='text-white/80 text-sm italic'>"Driven by logic, inspired by design."</p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </Container>
     </section>

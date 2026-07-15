@@ -1,5 +1,4 @@
-import { Briefcase, Heart, Languages, Layers, MapPin, Zap } from 'lucide-react';
-
+import { Monitor, Target, Zap } from 'lucide-react';
 import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 
 export const navLinks = [
@@ -25,59 +24,47 @@ export const heroContent = {
 };
 
 export const aboutContent = {
-  title: 'About Me',
-  subtitle: 'My Story',
-  description:
-    'I am a passionate Frontend Engineer with a focus on creating high-end, interactive web applications. My journey started with a curiosity for how design and code intersect, leading me to specialize in React and modern CSS architectures.',
-  stats: [
+  intro:
+    'I am a Frontend Engineer driven by the challenge of turning complex logic into elegant, high-performance interfaces. My focus is on building scalable architectures that provide a seamless bridge between design and technology.',
+
+  // The Pillars: Meaningful supporting elements
+  pillars: [
     {
-      label: 'Years Experience',
-      value: '5+ Years',
-      icon: Briefcase
+      title: 'Work Approach',
+      value: 'Goal-oriented development with a focus on clean, maintainable code structures.',
+      icon: Target
     },
     {
-      label: 'Location',
-      value: 'New York, USA',
-      icon: MapPin
+      title: 'Current Focus',
+      value: 'Advanced React patterns, Server-Side Rendering, and Web Performance.',
+      icon: Monitor
     },
     {
-      label: 'Design Engineering', // REPLACED Education
-      value: 'Pixel Perfection',
-      icon: Layers
-    },
-    {
-      label: 'Languages',
-      value: 'English, Spanish',
-      icon: Languages
+      title: 'Performance',
+      value: 'Optimizing critical rendering paths to achieve sub-second load times.',
+      icon: Zap
     }
   ],
-  highlights: [
+
+  // The Main Experience
+  journey: [
     {
-      title: 'Performance First',
-      description: 'Optimizing for speed and efficiency in every line of code.',
-      icon: Zap
+      company: 'Octidev',
+      role: 'Software Engineer',
+      period: '2024 — 2025',
+      points: [
+        'Architected enterprise-scale admin dashboards with granular access control systems.',
+        'Engineered stable frontend solutions for the Shopify application ecosystem.'
+      ]
     },
     {
-      title: 'User Centric',
-      description: 'Designing experiences that feel natural and intuitive.',
-      icon: Heart
+      company: 'DevsNest LLC',
+      role: 'JavaScript Developer',
+      period: '2023',
+      points: [
+        'Built Puppeteer-driven scraping engines for large-scale data collection automation.',
+        'Developed merchant-facing Shopify widgets centered on UI customization.'
+      ]
     }
   ]
 };
-
-export const experienceContent = [
-  {
-    company: 'Octidev',
-    role: 'Software Engineer',
-    duration: 'Dec 2024 – Oct 2025',
-    description:
-      'Engineered a comprehensive admin dashboard featuring role-based access control (ACL) to manage complex application data and large-scale user metrics. Contributed to the development and stability of a Shopify Cart application and built a modern, high-conversion marketing platform for product showcasing.'
-  },
-  {
-    company: 'DevsNest LLC',
-    role: 'JavaScript Developer',
-    duration: 'Apr 2023 – Nov 2023',
-    description:
-      'Architected a robust web scraping engine using Puppeteer to automate promotional data collection. Developed a customizable Shopify Review App, enabling merchants to manage customer feedback through bespoke widgets, and streamlined management workflows across multiple Shopify extension dashboards.'
-  }
-];

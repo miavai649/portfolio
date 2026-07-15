@@ -1,6 +1,5 @@
 import Navbar from './components/layout/Navbar';
 import About from './components/sections/About';
-import Experience from './components/sections/Experience';
 import Hero from './components/sections/Hero';
 
 function App() {
@@ -9,7 +8,6 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Experience />
       {/* More sections will follow */}
     </main>
   );
