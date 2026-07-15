@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { FileDown, Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { navLinks } from '../../data/content';
+import { navLinks } from '../../data/navbar';
 import Button from '../ui/Button';
 import Container from '../ui/Container';
 import Logo from './Logo';

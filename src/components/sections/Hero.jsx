@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react'; // UI Icons
 import MiavaiImage from '../../assets/images/miavai.jpg';
-import { heroContent } from '../../data/content';
+import { heroContent } from '../../data/hero';
 
 const Hero = () => {
   return (

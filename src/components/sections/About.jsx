@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Minus, User } from 'lucide-react'; // Added User icon
-import { aboutContent } from '../../data/content';
+import { aboutContent } from '../../data/about';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 
