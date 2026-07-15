@@ -1,0 +1,56 @@
+@import 'tailwindcss';
+
+/* Define the design system and theme tokens */
+@theme {
+  /* Premium Color Palette */
+  --color-primary: #8b5cf6; /* Modern Violet */
+  --color-dark-bg: #050505;
+  --color-dark-card: #0f0f0f;
+  --color-light-bg: #ffffff;
+  --color-light-text: #111827;
+
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Animations */
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@layer base {
+  /* Smooth scrolling for the one-page experience */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply antialiased transition-colors duration-300;
+    @apply bg-white text-gray-900;
+  }
+
+  /* Dark mode class-based application */
+  .dark body {
+    @apply bg-[#050505] text-gray-100;
+  }
+
+  /* Set display font for headings */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Custom Keyframes */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
