@@ -17,7 +17,7 @@ const Hero = () => {
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
           <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6'>
             <Sparkles size={14} />
-            Available for freelance
+            Available for work
           </div>
 
           <h1 className='text-5xl md:text-7xl font-display font-extrabold leading-[1.05] mb-6'>
@@ -77,7 +77,7 @@ const Hero = () => {
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               className='absolute -top-6 -right-6 bg-white dark:bg-dark-card p-4 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 hidden md:block'>
               <p className='text-xs font-bold text-primary uppercase mb-1'>Experience</p>
-              <p className='text-xl font-display font-black'>5+ Years</p>
+              <p className='text-xl font-display font-black'>1+ Years</p>
             </motion.div>
 
             <motion.div
@@ -90,7 +90,7 @@ const Hero = () => {
                 </div>
                 <div>
                   <p className='text-[10px] uppercase font-bold text-gray-500'>Based in</p>
-                  <p className='text-sm font-bold'>New York, USA</p>
+                  <p className='text-sm font-bold'>Dhaka, Bangladesh</p>
                 </div>
               </div>
             </motion.div>
