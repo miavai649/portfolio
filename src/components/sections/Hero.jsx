@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react'; // UI Icons
 import MiavaiImage from '../../assets/images/miavai.jpg';
 import { heroContent } from '../../data/hero';
+import Button from '../ui/Button';
 
 const Hero = () => {
   return (
@@ -30,12 +31,18 @@ const Hero = () => {
           <p className='text-lg text-gray-600 dark:text-gray-400 max-w-lg mb-10 leading-relaxed'>{heroContent.description}</p>
 
           <div className='flex flex-wrap gap-5 mb-12'>
-            <button className='px-8 py-4 rounded-full bg-primary text-white font-bold flex items-center gap-2 hover:scale-105 transition-transform'>
+            {/* <button className='px-8 py-4 rounded-full bg-primary text-white font-bold flex items-center gap-2 hover:scale-105 transition-transform'>
               {heroContent.ctaPrimary} <ArrowRight size={20} />
             </button>
             <button className='px-8 py-4 rounded-full border-2 border-black/10 dark:border-white/10 font-bold hover:bg-black/5 dark:hover:bg-white/5 transition-colors'>
               {heroContent.ctaSecondary}
-            </button>
+            </button> */}
+            <Button variant='primary' className='px-8 py-4 '>
+              {heroContent.ctaPrimary} <ArrowRight size={20} />
+            </Button>
+            <Button variant='outline' className='px-8 py-4 '>
+              {heroContent.ctaSecondary}
+            </Button>
           </div>
 
           {/* Social Links using React Icons for Brands */}

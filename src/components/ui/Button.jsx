@@ -8,7 +8,7 @@ const Button = ({ children, variant = 'primary', className = '', ...props }) => 
 
   return (
     <button
-      className={`px-8 py-4 rounded-full font-bold transition-all active:scale-95 flex items-center justify-center gap-2 ${variants[variant]} ${className} cursor-pointer`}
+      className={`px-8 py-4 rounded-full font-bold transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer ${variants[variant]} ${className} `}
       {...props}>
       {children}
     </button>
