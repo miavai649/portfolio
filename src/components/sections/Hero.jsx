@@ -6,7 +6,7 @@ import Button from '../ui/Button';
 
 const Hero = () => {
   return (
-    <section id='home' className='relative min-h-screen flex items-center pt-20 overflow-hidden'>
+    <section id='home' className='relative min-h-screen flex items-center pt-20 overflow-hidden  bg-white dark:bg-dark-bg transition-colors duration-500'>
       {/* Premium Background Decoration */}
       <div className='absolute top-0 left-0 w-full h-full -z-10'>
         <div className='absolute top-[10%] left-[5%] w-[30rem] h-[30rem] bg-primary/10 rounded-full blur-[120px] animate-pulse' />

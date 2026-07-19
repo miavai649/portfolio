@@ -6,7 +6,7 @@ import SectionTitle from '../ui/SectionTitle';
 
 const About = () => {
   return (
-    <section id='about' className='pt-32'>
+    <section id='about' className='pt-32 bg-white dark:bg-dark-bg transition-colors duration-500'>
       <Container>
         {/* --- HEADER & INTRO --- */}
         <div className='max-w-4xl mb-24'>

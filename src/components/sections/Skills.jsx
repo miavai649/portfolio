@@ -6,7 +6,7 @@ import SectionTitle from '../ui/SectionTitle';
 
 const Skills = () => {
   return (
-    <section id='skills' className='pt-32 '>
+    <section id='skills' className='pt-32 bg-white dark:bg-dark-bg transition-colors duration-500'>
       <Container>
         <SectionTitle subtitle='Expertise' title='My Technical Matrix' icon={Zap} />
 
