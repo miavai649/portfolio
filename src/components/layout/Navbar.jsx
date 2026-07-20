@@ -23,7 +23,7 @@ const Navbar = () => {
         isScrolled ? 'py-4 bg-white/70 dark:bg-black/70 backdrop-blur-xl border-b border-black/5 dark:border-white/5' : 'py-6'
       }`}>
       <Container className='flex items-center justify-between'>
-        <Logo />
+        <Logo className={'text-2xl'} />
 
         {/* Desktop Navigation */}
         <div className='hidden md:flex items-center gap-10'>
