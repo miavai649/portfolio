@@ -91,7 +91,7 @@ const Navbar = () => {
                 variant='primary'
                 className={`transition-all duration-200 ${isScrolled ? 'h-8 px-4 text-[10px]' : 'h-10 px-6 text-xs'}`}>
                 <FileDown size={14} />
-                <span className={isScrolled ? 'hidden lg:block' : ''}>Resume</span>
+                <span className='hidden lg:block'>Resume</span>
               </Button>
             </div>
           </div>
