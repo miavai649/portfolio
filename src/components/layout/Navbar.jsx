@@ -48,17 +48,16 @@ const Navbar = () => {
           mass: 1
         }}
         className={`
-          pointer-events-auto flex items-center
-          ${
-            isScrolled
-              ? 'w-max px-2 py-2 rounded-full border border-black/5 dark:border-white/10 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-2xl shadow-black/5'
-              : 'w-full max-w-7xl py-6 bg-transparent border-transparent'
+          pointer-events-auto flex items-center max-md:w-full
+          ${isScrolled
+            ? 'w-max px-2 py-2 rounded-full border border-black/5 dark:border-white/10 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md shadow-2xl shadow-black/5'
+            : 'w-full max-w-7xl py-6 bg-transparent border-transparent'
           }
         `}>
         <div className={`flex items-center justify-between w-full gap-8 ${isScrolled ? 'px-4' : 'px-6 md:px-12'}`}>
           {/* Logo stays anchored */}
           <div className='flex-shrink-0'>
-            <Logo />
+            <Logo className={'text-2xl'} />
           </div>
 
           {/* Desktop Nav: Snappy Active Pill */}
@@ -70,9 +69,8 @@ const Navbar = () => {
                   <li key={link.name} className='relative'>
                     <a
                       href={link.href}
-                      className={`relative z-10 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-200 ${
-                        isActive ? 'text-primary' : 'text-gray-500 hover:text-black dark:hover:text-white'
-                      }`}>
+                      className={`relative z-10 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-200 ${isActive ? 'text-primary' : 'text-gray-500 hover:text-black dark:hover:text-white'
+                        }`}>
                       {link.name}
                     </a>
                     {isActive && (
@@ -117,7 +115,7 @@ const Navbar = () => {
             exit={{ opacity: 0 }}
             className='fixed inset-0 h-screen w-full bg-white/98 dark:bg-zinc-950/98 backdrop-blur-2xl z-[110] flex flex-col p-8 md:hidden pointer-events-auto'>
             <div className='flex justify-between items-center'>
-              <Logo />
+              <Logo className={'text-2xl'} />
               <button onClick={() => setIsMobileMenuOpen(false)} className='p-2 text-gray-500'>
                 <X size={32} />
               </button>
