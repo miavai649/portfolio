@@ -108,7 +108,7 @@ const Contact = () => {
                   <Button
                     className='w-full py-5 rounded-[1.5rem] group shadow-[0_20px_40px_-10px_rgba(139,92,246,0.3)] hover:shadow-[0_24px_48px_-12px_rgba(139,92,246,0.4)] transition-all duration-500'
                     onClick={(e) => e.preventDefault()}>
-                    Initiate Connection
+                    Send Message
                     <Send
                       size={18}
                       className='ml-2 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1'
@@ -117,7 +117,7 @@ const Contact = () => {
 
                   <div className='flex items-center gap-3 opacity-40'>
                     <div className='w-1 h-1 rounded-full bg-gray-400' />
-                    <p className='text-[9px] text-gray-500 font-bold uppercase tracking-[0.3em]'>End-to-End Encrypted</p>
+                    <p className='text-[9px] text-gray-700 dark:text-gray-400 font-bold uppercase tracking-[0.3em]'>End-to-End Encrypted</p>
                     <div className='w-1 h-1 rounded-full bg-gray-400' />
                   </div>
                 </div>
