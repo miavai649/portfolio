@@ -131,6 +131,14 @@ const Navbar = () => {
                 </a>
               ))}
             </nav>
+            <div className='mt-auto pb-4'>
+              <Button
+                variant='primary'
+                className='w-full text-sm py-4'>
+                <FileDown size={18} />
+                <span>Resume Download</span>
+              </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
