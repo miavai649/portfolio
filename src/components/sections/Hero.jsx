@@ -12,7 +12,7 @@ const Hero = () => {
       {/* Premium Background Decoration */}
       <div className='absolute top-0 left-0 w-full h-full -z-10'>
         <div className='absolute top-[10%] left-[5%] w-[30rem] h-[30rem] bg-primary/10 rounded-full blur-[120px] animate-pulse' />
-        <div className='absolute bottom-[10%] right-[5%] w-[25rem] h-[25rem] bg-blue-500/10 rounded-full blur-[100px]' />
+        <div className='absolute bottom-[10%] right-[5%] w-[25rem] h-[25rem] bg-amber-500/8 rounded-full blur-[100px]' />
       </div>
 
       <div className='max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center'>
@@ -25,7 +25,7 @@ const Hero = () => {
 
           <h1 className='text-5xl md:text-7xl font-display font-extrabold leading-[1.05] mb-6'>
             {heroContent.greeting} <br />
-            <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600'>{heroContent.name}</span>
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600'>{heroContent.name}</span>
           </h1>
 
           <h2 className='text-2xl md:text-3xl font-medium text-gray-500 dark:text-gray-400 mb-6'>{heroContent.role}</h2>
@@ -88,8 +88,8 @@ const Hero = () => {
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
               className='absolute -bottom-6 -left-6 bg-white dark:bg-dark-card p-4 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 hidden md:block'>
               <div className='flex items-center gap-3'>
-                <div className='w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center'>
-                  <Sparkles className='text-blue-500' size={20} />
+                <div className='w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center'>
+                  <Sparkles className='text-primary' size={20} />
                 </div>
                 <div>
                   <p className='text-[10px] uppercase font-bold text-gray-500'>Based in</p>

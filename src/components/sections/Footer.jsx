@@ -90,7 +90,7 @@ const Footer = () => {
             whileHover={{ y: -5, scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToTop}
-            className='fixed bottom-8 right-8 z-[60] w-14 h-14 rounded-2xl bg-primary text-white shadow-[0_20px_40px_-10px_rgba(139,92,246,0.5)] flex flex-col items-center justify-center group overflow-hidden cursor-pointer'
+            className='fixed bottom-8 right-8 z-[60] w-14 h-14 rounded-2xl bg-primary text-white shadow-[0_20px_40px_-10px_rgba(217,119,6,0.4)] flex flex-col items-center justify-center group overflow-hidden cursor-pointer'
             aria-label='Back to top'>
             {/* Background Glow Effect */}
             <div className='absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500' />

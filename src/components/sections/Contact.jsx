@@ -106,7 +106,7 @@ const Contact = () => {
 
                 <div className='pt-2 flex flex-col items-center gap-6'>
                   <Button
-                    className='w-full py-5 rounded-[1.5rem] group shadow-[0_20px_40px_-10px_rgba(139,92,246,0.3)] hover:shadow-[0_24px_48px_-12px_rgba(139,92,246,0.4)] transition-all duration-500'
+                    className='w-full py-5 rounded-[1.5rem] group shadow-[0_20px_40px_-10px_rgba(217,119,6,0.25)] hover:shadow-[0_24px_48px_-12px_rgba(217,119,6,0.35)] transition-all duration-500'
                     onClick={(e) => e.preventDefault()}>
                     Send Message
                     <Send

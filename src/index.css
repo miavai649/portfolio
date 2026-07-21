@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import 'tailwindcss';
 
 /* 
@@ -12,22 +13,21 @@
 */
 @theme {
   /* Brand Colors */
-  --color-primary: #8b5cf6;
+  --color-primary: #d97706;
 
   /* Layout Colors (Default/Light) */
-  --color-bg-page: #ffffff;
-  --color-text-main: #111827;
+  --color-bg-page: #fafaf9;
+  --color-text-main: #1c1917;
   --color-card: #ffffff;
-  --color-border: #f3f4f6;
+  --color-border: #e7e5e4;
 
-  /* Static tokens for backward compatibility with utilities 
-     (e.g., if you used dark:bg-dark-bg in your components) */
-  --color-dark-bg: #050505;
-  --color-dark-card: #0f0f0f;
+  /* Static tokens for backward compatibility with utilities */
+  --color-dark-bg: #0a0a09;
+  --color-dark-card: #111110;
 
   /* Typography Setup */
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Instrument Sans', system-ui, sans-serif;
 
   /* Animation Setup */
   --animate-float: float 6s ease-in-out infinite;
@@ -50,10 +50,10 @@
   This allows the switch to work without changing component code.
 */
 .dark {
-  --color-bg-page: #050505;
-  --color-text-main: #f9fafb;
-  --color-card: #0f0f0f;
-  --color-border: #1f1f1f;
+  --color-bg-page: #0a0a09;
+  --color-text-main: #f5f5f4;
+  --color-card: #111110;
+  --color-border: #1c1c1b;
 }
 
 /* 
@@ -89,6 +89,6 @@
     @apply bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-gray-200 dark:bg-zinc-800 rounded-full;
+    @apply bg-stone-200 dark:bg-stone-800 rounded-full;
   }
 }
