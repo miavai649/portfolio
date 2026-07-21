@@ -15,7 +15,7 @@ const Hero = () => {
         <div className='absolute bottom-[10%] right-[5%] w-[25rem] h-[25rem] bg-amber-500/8 rounded-full blur-[100px]' />
       </div>
 
-      <div className='max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center'>
+      <div className='max-w-7xl mx-auto px-4 min-[375px]:px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center'>
         {/* Left Side: Content */}
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
           <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6'>
@@ -23,20 +23,20 @@ const Hero = () => {
             Available for work
           </div>
 
-          <h1 className='text-5xl md:text-7xl font-display font-extrabold leading-[1.05] mb-6'>
+          <h1 className='text-4xl min-[375px]:text-5xl md:text-7xl font-display font-extrabold leading-[1.05] mb-6'>
             {heroContent.greeting} <br />
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600'>{heroContent.name}</span>
           </h1>
 
-          <h2 className='text-2xl md:text-3xl font-medium text-gray-500 dark:text-gray-400 mb-6'>{heroContent.role}</h2>
+          <h2 className='text-xl min-[375px]:text-2xl md:text-3xl font-medium text-gray-500 dark:text-gray-400 mb-6'>{heroContent.role}</h2>
 
-          <p className='text-lg text-gray-600 dark:text-gray-400 max-w-lg mb-10 leading-relaxed'>{heroContent.description}</p>
+          <p className='text-base min-[375px]:text-lg text-gray-600 dark:text-gray-400 max-w-lg mb-10 leading-relaxed'>{heroContent.description}</p>
 
-          <div className='flex flex-wrap gap-5 mb-12'>
-            <Button variant='primary' className='px-8 py-4 '>
+          <div className='flex flex-wrap gap-4 min-[375px]:gap-5 mb-12'>
+            <Button variant='primary' className='px-6 py-3 min-[375px]:px-8 min-[375px]:py-4 text-sm min-[375px]:text-base'>
               {heroContent.ctaPrimary} <ArrowRight size={20} />
             </Button>
-            <Button variant='outline' className='px-8 py-4 '>
+            <Button variant='outline' className='px-6 py-3 min-[375px]:px-8 min-[375px]:py-4 text-sm min-[375px]:text-base'>
               {heroContent.ctaSecondary}
             </Button>
           </div>
@@ -63,10 +63,10 @@ const Hero = () => {
           className='relative flex justify-center'>
           <div className='relative group'>
             {/* Image Border/Frame */}
-            <div className='absolute -inset-4 border border-black/5 dark:border-white/5 rounded-[3rem] -z-10 group-hover:scale-105 transition-transform duration-700' />
+            <div className='absolute -inset-3 min-[375px]:-inset-4 border border-black/5 dark:border-white/5 rounded-[2.2rem] min-[375px]:rounded-[3rem] -z-10 group-hover:scale-105 transition-transform duration-700' />
 
             {/* Profile Image */}
-            <div className='w-[320px] h-[450px] md:w-[420px] md:h-[550px] rounded-[2.5rem] overflow-hidden shadow-2xl transform transition-all duration-700 group-hover:rotate-1'>
+            <div className='w-[270px] h-[380px] min-[375px]:w-[320px] min-[375px]:h-[450px] md:w-[420px] md:h-[550px] rounded-[2rem] min-[375px]:rounded-[2.5rem] overflow-hidden shadow-2xl transform transition-all duration-700 group-hover:rotate-1'>
               <img
                 src={MiavaiImage}
                 alt='Profile'
