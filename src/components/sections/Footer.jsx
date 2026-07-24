@@ -38,7 +38,7 @@ const Footer = () => {
 
           {/* Navigation Column */}
           <div className='lg:col-span-4 flex flex-col gap-4'>
-            <h4 className='text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-2'>Navigation</h4>
+            <h4 className='label-meta tracking-[0.3em] text-gray-400 mb-2'>Navigation</h4>
             <div className='grid grid-cols-2 gap-y-3 gap-x-8'>
               {footerContent.navLinks.map((link) => (
                 <a
@@ -53,7 +53,7 @@ const Footer = () => {
 
           {/* Socials Column */}
           <div className='lg:col-span-3 flex flex-col items-start lg:items-end gap-6'>
-            <h4 className='text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 mb-2'>Social Ecosystem</h4>
+            <h4 className='label-meta tracking-[0.3em] text-gray-400 mb-2'>Social Ecosystem</h4>
             <div className='flex gap-3'>
               {footerContent.socials.map((social, idx) => (
                 <a
@@ -61,7 +61,7 @@ const Footer = () => {
                   href={social.href}
                   target='_blank'
                   rel='noreferrer'
-                  className='w-12 h-12 rounded-2xl bg-gray-50 dark:bg-zinc-900 border border-black/[0.03] dark:border-white/[0.05] flex items-center justify-center text-gray-500 hover:text-primary hover:border-primary/30 transition-all duration-300'
+                  className='social-btn hover:border-primary/30'
                   aria-label={social.label}>
                   <social.icon size={18} />
                 </a>
@@ -72,9 +72,9 @@ const Footer = () => {
 
         {/* --- BOTTOM SECTION: LEGAL --- */}
         <div className='pt-10 border-t border-black/[0.03] dark:border-white/[0.05] flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left'>
-          <p className='text-[10px] font-black uppercase tracking-[0.3em] text-gray-400'>{footerContent.copyright}</p>
+          <p className='label-meta tracking-[0.3em] text-gray-400'>{footerContent.copyright}</p>
 
-          <div className='flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400'>
+          <div className='flex items-center gap-2 label-meta tracking-[0.3em] text-gray-400'>
             Crafted with <Heart size={12} className='text-red-500 animate-pulse' /> for the modern web
           </div>
         </div>

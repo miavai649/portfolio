@@ -69,7 +69,7 @@ const Navbar = () => {
                   <li key={link.name} className='relative'>
                     <a
                       href={link.href}
-                      className={`relative z-10 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.2em] transition-colors duration-200 ${isActive ? 'text-primary' : 'text-gray-500 hover:text-black dark:hover:text-white'
+                      className={`relative z-10 px-4 py-1.5 label-meta text-[11px] tracking-[0.2em] transition-colors duration-200 ${isActive ? 'text-primary' : 'text-gray-500 hover:text-black dark:hover:text-white'
                         }`}>
                       {link.name}
                     </a>

@@ -20,7 +20,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}>
             <SectionTitle subtitle={contactContent.subtitle} title={contactContent.title} icon={Mail} className='mb-8' />
 
-            <p className='text-lg text-gray-500 dark:text-zinc-400 mb-12 max-w-md leading-relaxed'>{contactContent.description}</p>
+            <p className='section-desc max-w-md mb-12'>{contactContent.description}</p>
 
             <div className='space-y-8 mb-16'>
               {contactContent.details.map((item, idx) => {
@@ -31,7 +31,7 @@ const Contact = () => {
                       <Icon size={20} />
                     </div>
                     <div>
-                      <p className='text-[10px] font-black uppercase tracking-[0.25em] text-gray-400 mb-1'>{item.label}</p>
+                      <p className='label-meta text-gray-400 mb-1'>{item.label}</p>
                       {item.href ? (
                         <a
                           href={item.href}
@@ -55,7 +55,7 @@ const Contact = () => {
                   href={social.href}
                   target='_blank'
                   rel='noreferrer'
-                  className='w-12 h-12 rounded-2xl bg-gray-50 dark:bg-zinc-900 border border-black/[0.03] dark:border-white/[0.05] flex items-center justify-center text-gray-500 hover:text-primary transition-all duration-300'>
+                  className='social-btn'>
                   <social.icon size={20} />
                 </a>
               ))}
@@ -75,7 +75,7 @@ const Contact = () => {
                 <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75'></span>
                 <span className='relative inline-flex rounded-full h-2 w-2 bg-green-500'></span>
               </span>
-              <span className='text-[9px] font-black uppercase tracking-[0.15em] text-gray-500 dark:text-zinc-400'>Available for Work</span>
+              <span className='label-meta text-[9px] tracking-[0.15em] text-gray-500 dark:text-zinc-400'>Available for Work</span>
             </div>
 
             {/* Main Form Container */}
@@ -85,7 +85,7 @@ const Contact = () => {
                 <div className='flex items-center justify-between pb-6 border-b border-black/[0.03] dark:border-white/[0.05]'>
                   <div className='flex items-center gap-2.5 text-gray-400'>
                     <ShieldCheck size={14} className='text-primary/60' />
-                    <span className='text-[10px] font-bold uppercase tracking-[0.2em]'>Secure Inquiry</span>
+                    <span className='label-meta text-[10px] tracking-[0.2em]'>Secure Inquiry</span>
                   </div>
                   <Globe size={14} className='text-gray-300 dark:text-zinc-700' />
                 </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                 </div>
 
                 <div className='space-y-4'>
-                  <label className='text-[10px] font-black uppercase tracking-[0.25em] text-gray-400 ml-1'>Message Brief</label>
+                  <label className='label-meta text-gray-400 ml-1'>Message Brief</label>
                   <textarea
                     rows='5'
                     className='w-full p-6 rounded-[2rem] bg-gray-50/50 dark:bg-zinc-900/30 border border-black/[0.05] dark:border-white/[0.05] hover:border-black/10 dark:hover:border-white/10 outline-none focus:bg-white dark:focus:bg-zinc-900 focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all duration-300 resize-none text-sm leading-relaxed shadow-inner placeholder:text-gray-300 dark:placeholder:text-zinc-700'
@@ -116,7 +116,7 @@ const Contact = () => {
 
                   <div className='flex items-center gap-3 opacity-40'>
                     <div className='w-1 h-1 rounded-full bg-gray-400' />
-                    <p className='text-[9px] text-gray-700 dark:text-gray-400 font-bold uppercase tracking-[0.3em]'>End-to-End Encrypted</p>
+                    <p className='label-meta text-[9px] tracking-[0.3em] text-gray-700 dark:text-gray-400'>End-to-End Encrypted</p>
                     <div className='w-1 h-1 rounded-full bg-gray-400' />
                   </div>
                 </div>
@@ -131,7 +131,7 @@ const Contact = () => {
 /* --- REFINED PREMIUM INPUT COMPONENT --- */
 const FormInput = ({ label, type, placeholder }) => (
   <div className='space-y-4'>
-    <label className='text-[10px] font-black uppercase tracking-[0.25em] text-gray-400 ml-1'>{label}</label>
+    <label className='label-meta text-gray-400 ml-1'>{label}</label>
     <div className='relative group/input'>
       <input
         type={type}

@@ -18,7 +18,7 @@ const About = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className='text-lg min-[375px]:text-xl md:text-2xl text-gray-600 dark:text-zinc-400 leading-relaxed font-medium'>
+          className='section-desc'>
           {aboutContent.intro}
         </motion.p>
       </div>
@@ -30,7 +30,7 @@ const About = () => {
             <div className='p-2 rounded-lg bg-primary/10 text-primary'>
               <Briefcase size={20} />
             </div>
-            <h3 className='text-xs min-[375px]:text-sm font-black uppercase tracking-[0.3em] text-gray-400'>Experience History</h3>
+            <h3 className='label-meta text-xs min-[375px]:text-sm tracking-[0.3em] text-gray-400'>Experience History</h3>
           </div>
 
           <div className='space-y-12 md:space-y-20'>
@@ -48,7 +48,7 @@ const About = () => {
 
                 <div className='flex flex-col md:flex-row md:items-baseline justify-between mb-4 md:mb-6 border-b border-gray-100 dark:border-zinc-800 pb-4'>
                   <h4 className='text-2xl min-[375px]:text-3xl md:text-4xl font-display font-bold group-hover:text-primary transition-colors'>{job.role}</h4>
-                  <span className='text-xs min-[375px]:text-sm font-bold text-primary tracking-widest uppercase mt-2 md:mt-0'>{job.period}</span>
+                  <span className='label-meta text-xs min-[375px]:text-sm tracking-widest text-primary mt-2 md:mt-0'>{job.period}</span>
                 </div>
 
                 <div className='flex flex-col md:flex-row gap-4 md:gap-8'>
@@ -75,7 +75,7 @@ const About = () => {
         <div className='lg:w-[35%] order-1 lg:order-2'>
           <div className='sticky top-24 md:top-32 space-y-6 md:space-y-8'>
             <div className='p-6 md:p-8 rounded-[1.5rem] md:rounded-[2rem] bg-gray-50 dark:bg-zinc-900/50 border border-black/5 dark:border-white/5'>
-              <h3 className='text-xs font-black uppercase tracking-[0.2em] text-gray-400 mb-6 md:mb-8 border-b border-black/5 dark:border-white/5 pb-4'>
+              <h3 className='label-meta text-xs tracking-[0.2em] text-gray-400 mb-6 md:mb-8 border-b border-black/5 dark:border-white/5 pb-4'>
                 Professional Pillars
               </h3>
               <div className='space-y-8 md:space-y-10'>

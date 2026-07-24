@@ -11,13 +11,13 @@ const Skills = () => {
 
         <div className='grid lg:grid-cols-2 gap-8'>
           {skillCategories.map((category, idx) => (
-            <motion.div
+             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className='p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/5 shadow-sm group hover:shadow-xl transition-all duration-500'>
+              className='premium-card group hover:shadow-xl'>
               {/* Category Header */}
               <div className='flex items-start gap-5 mb-8'>
                 <div className='p-3 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-500'>
@@ -31,7 +31,7 @@ const Skills = () => {
 
               {/* Core Technologies */}
               <div className='mb-8'>
-                <p className='text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-5'>Core Stack</p>
+                <p className='label-meta tracking-[0.2em] text-gray-400 mb-5'>Core Stack</p>
                 <div className='flex flex-wrap gap-6'>
                   {category.mainTech.map((tech, tIdx) => (
                     <div key={tIdx} className='group/item flex flex-col items-center gap-2'>
@@ -52,7 +52,7 @@ const Skills = () => {
 
               {/* Ecosystem Tags */}
               <div>
-                <p className='text-[10px] font-black uppercase tracking-[0.2em] text-gray-400 mb-4'>Ecosystem & Tools</p>
+                <p className='label-meta tracking-[0.2em] text-gray-400 mb-4'>Ecosystem & Tools</p>
                 <div className='flex flex-wrap gap-2'>
                   {category.ecosystem.map((skill, sIdx) => (
                     <span

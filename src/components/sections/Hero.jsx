@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react'; // UI Icons
 import MiavaiImage from '../../assets/images/miavai.jpg';
 import { heroContent } from '../../data/hero';
 import Button from '../ui/Button';
+import SectionBadge from '../ui/SectionBadge';
 
 const childVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -37,10 +38,8 @@ const Hero = () => {
           }}
         >
           <motion.div
-            variants={childVariants}
-            className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6'>
-            <Sparkles size={14} />
-            Available for work
+            variants={childVariants}>
+            <SectionBadge icon={Sparkles}>Available for work</SectionBadge>
           </motion.div>
 
           <motion.h1
@@ -58,7 +57,7 @@ const Hero = () => {
 
           <motion.p
             variants={childVariants}
-            className='text-base min-[375px]:text-lg text-gray-600 dark:text-gray-400 max-w-lg mb-10 leading-relaxed'>
+            className='section-desc max-w-lg mb-10'>
             {heroContent.description}
           </motion.p>
 
