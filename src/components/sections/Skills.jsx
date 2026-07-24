@@ -1,14 +1,13 @@
 import { motion } from 'framer-motion';
 import { Zap } from 'lucide-react';
 import { skillCategories } from '../../data/skills';
-import Container from '../ui/Container';
+import SectionWrapper from '../ui/SectionWrapper';
 import SectionTitle from '../ui/SectionTitle';
 
 const Skills = () => {
   return (
-    <section id='skills' className='pt-32 bg-white dark:bg-dark-bg transition-colors duration-500'>
-      <Container>
-        <SectionTitle subtitle='Expertise' title='My Technical Matrix' icon={Zap} />
+    <SectionWrapper id='skills'>
+      <SectionTitle subtitle='Expertise' title='My Technical Matrix' icon={Zap} />
 
         <div className='grid lg:grid-cols-2 gap-8'>
           {skillCategories.map((category, idx) => (
@@ -67,8 +66,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
-      </Container>
-    </section>
+    </SectionWrapper>
   );
 };
 

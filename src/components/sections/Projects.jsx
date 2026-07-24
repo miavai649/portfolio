@@ -3,22 +3,20 @@ import { ExternalLink, Folder } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa6';
 
 import { projectsContent } from '../../data/projects';
-import Container from '../ui/Container';
+import SectionWrapper from '../ui/SectionWrapper';
 import SectionTitle from '../ui/SectionTitle';
 
 const Projects = () => {
   return (
-    <section id='projects' className='pt-32 bg-white dark:bg-dark-bg transition-colors duration-500'>
-      <Container>
-        <SectionTitle subtitle='Selected Work' title='Featured Projects' icon={Folder} />
+    <SectionWrapper id='projects'>
+      <SectionTitle subtitle='Selected Work' title='Featured Projects' icon={Folder} />
 
-        <div className='grid grid-cols-1 gap-24'>
-          {projectsContent.map((project, idx) => (
-            <ProjectCard key={project.id} project={project} index={idx} />
-          ))}
-        </div>
-      </Container>
-    </section>
+      <div className='grid grid-cols-1 gap-24'>
+        {projectsContent.map((project, idx) => (
+          <ProjectCard key={project.id} project={project} index={idx} />
+        ))}
+      </div>
+    </SectionWrapper>
   );
 };
 

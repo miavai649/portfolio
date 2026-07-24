@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Globe, Mail, MapPin, Phone, Send, ShieldCheck } from 'lucide-react';
 import { contactContent } from '../../data/contact';
 import Button from '../ui/Button';
-import Container from '../ui/Container';
+import SectionWrapper from '../ui/SectionWrapper';
 import SectionTitle from '../ui/SectionTitle';
 
 // Mapping Lucide icons
@@ -10,8 +10,7 @@ const iconMap = { Mail, Phone, MapPin };
 
 const Contact = () => {
   return (
-    <section id='contact' className='py-32 bg-white dark:bg-dark-bg transition-colors duration-500 overflow-hidden'>
-      <Container>
+    <SectionWrapper id='contact' hasBottomPadding={true} overflowHidden={true}>
         <div className='grid lg:grid-cols-2 gap-20 items-center'>
           {/* --- LEFT SIDE: INFO (Unchanged Layout) --- */}
           <motion.div
@@ -125,8 +124,7 @@ const Contact = () => {
             </div>
           </motion.div>
         </div>
-      </Container>
-    </section>
+    </SectionWrapper>
   );
 };
 
