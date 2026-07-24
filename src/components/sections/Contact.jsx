@@ -99,7 +99,7 @@ const Contact = () => {
                   <label className='text-[10px] font-black uppercase tracking-[0.25em] text-gray-400 ml-1'>Message Brief</label>
                   <textarea
                     rows='5'
-                    className='w-full p-6 rounded-[2rem] bg-gray-50/50 dark:bg-zinc-900/30 border border-black/[0.05] dark:border-white/[0.05] outline-none focus:bg-white dark:focus:bg-zinc-900 focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all duration-300 resize-none text-sm leading-relaxed shadow-inner placeholder:text-gray-300 dark:placeholder:text-zinc-700'
+                    className='w-full p-6 rounded-[2rem] bg-gray-50/50 dark:bg-zinc-900/30 border border-black/[0.05] dark:border-white/[0.05] hover:border-black/10 dark:hover:border-white/10 outline-none focus:bg-white dark:focus:bg-zinc-900 focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all duration-300 resize-none text-sm leading-relaxed shadow-inner placeholder:text-gray-300 dark:placeholder:text-zinc-700'
                     placeholder='Tell me about your project...'></textarea>
                 </div>
 
@@ -136,7 +136,7 @@ const FormInput = ({ label, type, placeholder }) => (
       <input
         type={type}
         placeholder={placeholder}
-        className='w-full p-5 rounded-2xl bg-gray-50/50 dark:bg-zinc-900/30 border border-black/[0.05] dark:border-white/[0.05] outline-none focus:bg-white dark:focus:bg-zinc-900 focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all duration-300 text-sm font-medium shadow-inner placeholder:text-gray-300 dark:placeholder:text-zinc-700'
+        className='w-full p-5 rounded-2xl bg-gray-50/50 dark:bg-zinc-900/30 border border-black/[0.05] dark:border-white/[0.05] hover:border-black/10 dark:hover:border-white/10 outline-none focus:bg-white dark:focus:bg-zinc-900 focus:border-primary/40 focus:ring-4 focus:ring-primary/5 transition-all duration-300 text-sm font-medium shadow-inner placeholder:text-gray-300 dark:placeholder:text-zinc-700'
       />
     </div>
   </div>

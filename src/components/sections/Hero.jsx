@@ -4,11 +4,16 @@ import MiavaiImage from '../../assets/images/miavai.jpg';
 import { heroContent } from '../../data/hero';
 import Button from '../ui/Button';
 
+const childVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
 const Hero = () => {
   return (
     <section
       id='home'
-      className='relative min-h-screen flex items-center pt-32 lg:pt-20 overflow-hidden  bg-white dark:bg-dark-bg transition-colors duration-500'>
+      className='relative min-h-screen flex items-center pt-32 pb-16 lg:pb-0 lg:pt-20 overflow-hidden bg-white dark:bg-dark-bg transition-colors duration-500'>
       {/* Premium Background Decoration */}
       <div className='absolute top-0 left-0 w-full h-full -z-10'>
         <div className='absolute top-[10%] left-[5%] w-[30rem] h-[30rem] bg-primary/10 rounded-full blur-[120px] animate-pulse' />
@@ -16,43 +21,70 @@ const Hero = () => {
       </div>
 
       <div className='max-w-7xl mx-auto px-4 min-[375px]:px-6 md:px-12 grid lg:grid-cols-2 gap-16 items-center'>
-        {/* Left Side: Content */}
-        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
-          <div className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6'>
+        {/* Left Side: Content with stagger animations */}
+        <motion.div
+          initial='hidden'
+          animate='visible'
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.1
+              }
+            }
+          }}
+        >
+          <motion.div
+            variants={childVariants}
+            className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-6'>
             <Sparkles size={14} />
             Available for work
-          </div>
+          </motion.div>
 
-          <h1 className='text-4xl min-[375px]:text-5xl md:text-7xl font-display font-extrabold leading-[1.05] mb-6'>
+          <motion.h1
+            variants={childVariants}
+            className='text-4xl min-[375px]:text-5xl md:text-7xl font-display font-extrabold leading-[1.05] mb-6'>
             {heroContent.greeting} <br />
             <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-600'>{heroContent.name}</span>
-          </h1>
+          </motion.h1>
 
-          <h2 className='text-xl min-[375px]:text-2xl md:text-3xl font-medium text-gray-500 dark:text-gray-400 mb-6'>{heroContent.role}</h2>
+          <motion.h2
+            variants={childVariants}
+            className='text-xl min-[375px]:text-2xl md:text-3xl font-medium text-gray-500 dark:text-gray-400 mb-6'>
+            {heroContent.role}
+          </motion.h2>
 
-          <p className='text-base min-[375px]:text-lg text-gray-600 dark:text-gray-400 max-w-lg mb-10 leading-relaxed'>{heroContent.description}</p>
+          <motion.p
+            variants={childVariants}
+            className='text-base min-[375px]:text-lg text-gray-600 dark:text-gray-400 max-w-lg mb-10 leading-relaxed'>
+            {heroContent.description}
+          </motion.p>
 
-          <div className='flex flex-wrap gap-4 min-[375px]:gap-5 mb-12'>
-            <Button variant='primary' className='px-6 py-3 min-[375px]:px-8 min-[375px]:py-4 text-sm min-[375px]:text-base'>
-              {heroContent.ctaPrimary} <ArrowRight size={20} />
+          <motion.div
+            variants={childVariants}
+            className='flex flex-wrap gap-4 min-[375px]:gap-5 mb-12'>
+            <Button variant='primary' className='px-6 py-3 min-[375px]:px-8 min-[375px]:py-4 text-sm min-[375px]:text-base group hover:-translate-y-0.5 duration-300'>
+              {heroContent.ctaPrimary} <ArrowRight size={20} className='transition-transform duration-300 group-hover:translate-x-1' />
             </Button>
-            <Button variant='outline' className='px-6 py-3 min-[375px]:px-8 min-[375px]:py-4 text-sm min-[375px]:text-base'>
+            <Button variant='outline' className='px-6 py-3 min-[375px]:px-8 min-[375px]:py-4 text-sm min-[375px]:text-base hover:-translate-y-0.5 duration-300'>
               {heroContent.ctaSecondary}
             </Button>
-          </div>
+          </motion.div>
 
-          {/* Social Links using React Icons for Brands */}
-          <div className='flex items-center gap-6'>
+          {/* Social Links with hover transitions */}
+          <motion.div variants={childVariants} className='flex items-center gap-6'>
             {heroContent.socials.map((social, index) => (
               <a
                 key={index}
                 href={social.href}
                 aria-label={social.label}
-                className='text-gray-400 hover:text-primary transition-colors hover:scale-110'>
+                className='text-gray-400 hover:text-primary transition-all duration-300 hover:scale-110 hover:-translate-y-1'>
                 <social.icon size={26} />
               </a>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Right Side: Image with Floating Elements */}
@@ -70,7 +102,7 @@ const Hero = () => {
               <img
                 src={MiavaiImage}
                 alt='Profile'
-                className='w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700'
+                className='w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700'
               />
             </div>
 
@@ -78,7 +110,7 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className='absolute -top-6 -right-6 bg-white dark:bg-dark-card p-4 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 hidden md:block'>
+              className='absolute -top-6 -right-6 bg-white dark:bg-dark-card p-4 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 hidden md:block hover:scale-105 transition-transform duration-300 cursor-default'>
               <p className='text-xs font-bold text-primary uppercase mb-1'>Experience</p>
               <p className='text-xl font-display font-black'>1+ Years</p>
             </motion.div>
@@ -86,7 +118,7 @@ const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className='absolute -bottom-6 -left-6 bg-white dark:bg-dark-card p-4 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 hidden md:block'>
+              className='absolute -bottom-6 -left-6 bg-white dark:bg-dark-card p-4 rounded-2xl shadow-xl border border-black/5 dark:border-white/10 hidden md:block hover:scale-105 transition-transform duration-300 cursor-default'>
               <div className='flex items-center gap-3'>
                 <div className='w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center'>
                   <Sparkles className='text-primary' size={20} />

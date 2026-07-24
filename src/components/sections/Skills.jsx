@@ -38,7 +38,7 @@ const Skills = () => {
                       <div className='w-14 h-14 rounded-2xl bg-gray-50 dark:bg-zinc-800 flex items-center justify-center transition-all duration-300 group-hover/item:scale-110 group-hover/item:shadow-lg'>
                         <tech.icon
                           size={28}
-                          className='text-gray-400 dark:text-zinc-600 transition-colors duration-300 group-hover/item:text-[var(--hover-color)]'
+                          className='text-gray-400 dark:text-zinc-600 transition-all duration-300 group-hover/item:text-[var(--hover-color)] group-hover/item:rotate-6'
                           style={{ color: tech.color }}
                         />
                       </div>
@@ -57,7 +57,7 @@ const Skills = () => {
                   {category.ecosystem.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className='px-3 py-1.5 rounded-full bg-gray-50 dark:bg-zinc-800/50 border border-black/5 dark:border-white/5 text-[11px] font-medium text-gray-600 dark:text-zinc-400 hover:border-primary/30 hover:text-primary transition-all duration-300'>
+                      className='px-3 py-1.5 rounded-full bg-gray-50 dark:bg-zinc-800/50 border border-black/5 dark:border-white/5 text-[11px] font-medium text-gray-600 dark:text-zinc-400 hover:border-primary/30 hover:text-primary hover:-translate-y-0.5 hover:shadow-sm transition-all duration-300'>
                       {skill}
                     </span>
                   ))}

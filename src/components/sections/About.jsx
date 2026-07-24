@@ -59,7 +59,7 @@ const About = () => {
                     <ul className='space-y-3 md:space-y-4'>
                       {job.points.map((point, pIdx) => (
                         <li key={pIdx} className='flex items-start gap-3 text-gray-600 dark:text-zinc-400 text-sm min-[375px]:text-base leading-relaxed'>
-                          <Minus size={18} className='mt-1 text-primary shrink-0' />
+                          <Minus size={18} className='mt-1 text-primary shrink-0 transition-transform duration-300 group-hover:translate-x-1' />
                           {point}
                         </li>
                       ))}
@@ -87,8 +87,8 @@ const About = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
                     className='group flex gap-4 md:gap-5'>
-                    <div className='mt-1 p-2 h-fit rounded-lg bg-white dark:bg-zinc-800 border border-black/5 dark:border-white/5 text-primary shadow-sm group-hover:bg-primary group-hover:text-white transition-all duration-300'>
-                      <pillar.icon size={18} />
+                    <div className='mt-1 p-2 h-fit rounded-lg bg-white dark:bg-zinc-800 border border-black/5 dark:border-white/5 text-primary shadow-sm group-hover:bg-primary group-hover:text-white group-hover:rotate-6 transition-all duration-300'>
+                      <pillar.icon size={18} className='transition-transform duration-300 group-hover:scale-110' />
                     </div>
                     <div>
                       <h4 className='text-sm font-bold mb-2 uppercase tracking-wide'>{pillar.title}</h4>
